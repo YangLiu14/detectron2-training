@@ -78,7 +78,8 @@ class ImageList(object):
             assert t.shape[1:-2] == tensors[0].shape[1:-2], t.shape
 
         image_sizes = tuple(im.shape[-2:] for im in tensors)
-        if torch.jit.is_tracing():
+        # if torch.jit.is_tracing():
+        if 0:   # TODO Yang: is_tracing is not working for torch1.4 1.5 and torchvision0.5 0.6
             # In tracing mode, x.shape[i] is a scalar Tensor, and should not be converted
             # to int: this will cause the traced graph to have hard-coded shapes.
             # Instead we convert each shape to a vector with a stack()
