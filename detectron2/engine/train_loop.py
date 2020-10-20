@@ -233,6 +233,7 @@ class SimpleTrainer(TrainerBase):
         If you want to do something with the losses, you can wrap the model.
         """
         loss_dict = self.model(data)
+        import pdb; pdb.set_trace()
         losses = sum(loss_dict.values())
 
         """
