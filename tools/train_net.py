@@ -39,7 +39,8 @@ from detectron2.evaluation import (
 )
 from detectron2.modeling import GeneralizedRCNNWithTTA
 from detectron2.data.datasets import register_coco_instances
-root_dir = "/storage/slurm/liuyang/data/coco"
+# root_dir = "/storage/slurm/liuyang/data/coco"
+root_dir = "/home/kloping/OpenSet_MOT/data/coco"
 register_coco_instances("COCO_2017_train", {},
                         root_dir + "/annotations/instances_train2017.json",
                         root_dir + "/train2017/")
