@@ -40,13 +40,14 @@ from detectron2.evaluation import (
 from detectron2.modeling import GeneralizedRCNNWithTTA
 from detectron2.data.datasets import register_coco_instances
 # root_dir = "/storage/slurm/liuyang/data/coco"
-root_dir = "/home/kloping/OpenSet_MOT/data/coco"
+# root_dir = "/home/kloping/OpenSet_MOT/data/coco"
+root_dir = "/mnt/raid/davech2y/liuyang/data/coco"
 register_coco_instances("binary_coco_2017_train", {},
                         root_dir + "/annotations/binary_instances_train2017.json",
                         root_dir + "/train2017/")
 register_coco_instances("binary_coco_2017_val", {},
                         root_dir + "/annotations/binary_instances_val2017.json",
-                        root_dir + "val2017")
+                        root_dir + "/val2017/")
 
 class Trainer(DefaultTrainer):
     """

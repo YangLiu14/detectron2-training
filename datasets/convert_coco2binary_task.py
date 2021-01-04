@@ -15,10 +15,11 @@ def convert(fpath: str, out: str):
 
     for i, _ in enumerate(data['annotations']):
         if data['annotations'][i]['category_id'] > 81:
-            print(data['annotations'][i])
-            sys.exit()
+            print(data['annotations'][i]['category_id'])
+            # sys.exit()
         data['annotations'][i]['category_id'] = 1
 
+    data['categories'] = [{'supercategory': 'object', 'id': 1, 'name': 'object'}]
     # # store as new json file
     # with open(out, 'w') as f:
     #     json.dump(data, f)
@@ -26,7 +27,8 @@ def convert(fpath: str, out: str):
 
 
 if __name__ == "__main__":
-    root_dir = "/home/kloping/OpenSet_MOT/data/coco/annotations/"
+    # root_dir = "/home/kloping/OpenSet_MOT/data/coco/annotations/"
+    root_dir = "/mnt/raid/davech2y/liuyang/data/coco/annotations/"
     train_set = "instances_train2017.json"
     val_set = "instances_val2017.json"
 
